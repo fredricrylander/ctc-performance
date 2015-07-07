@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Performance Test &#151; Local Storage</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<script src="/js/local-storage.js"></script>
+	</head>
+	<body>
+		<div id="slaveMessage">
+			<h1>Local Storage</h1>
+			<p>This window is currently used for testing. It will be closed as soon as the test is done.</p>
+		</div>
+		<div id="content">
+			<h1>Local Storage</h1>
+			<div class="form-divider">
+				<h3>Windows</h3>
+				<div>
+					<button onclick="openWindows()">Open</button> <input id="numWindows" type="number" value="1" /> new window(s).
+					<button onclick="countWindows()">Count Connected Windows</button>
+					<button onclick="closeWindows()">Close Connected Windows</button>
+				</div>
+			</div>
+			<div class="form-divider">
+				<h3>Performance Test</h3>
+				<div>
+					Send a <input id="testSize" type="number" value="50" /> bytes payload
+					<input id="testCount" type="number" value="2000" /> times to all connected windows.
+				</div>
+				<div>
+					Do the test <input id="testRepeat" type="number" value="3" /> time(s), and calculate the average duration.
+				</div>
+				<div>
+					<input id="manualWindow" name="autoWindow" type="radio" value="false" /> Perform the test for the currently open windows.<br />
+					<input id="autoWindow" name="autoWindow" type="radio" value="true" checked />
+						Perform the test for <strong>2</strong> through <input id="testWindowCountMax" type="number" value="10" /> windows.
+				</div>
+				<div><button onclick="runTests()">Run Performance Test</button></div>
+			</div>
+			<div class="form-divider">
+				<p id="log"></p>
+			</div>
+			<div class="form-divider">
+				<p id="longLog"></p>
+			</div>
+		</div>
+	</body>
+</html>

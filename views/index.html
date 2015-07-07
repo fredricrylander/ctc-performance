@@ -1,0 +1,38 @@
+<!doctype html>
+<doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Performance Tests</title>
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		<h1>Testing Cross-tab Communication Performance</h1>
+		<p>
+			There are currently three web APIs that can be used for cross-tab communication: 
+			<em>Local Storage</em>, <em>Broadcast Channels</em> and <em>Shared Workers</em>.
+		</p>
+		<p>
+			In many of these tests, <em>Shared Workers</em> outperformes the other APIs by at least one order of magnitude. 
+			Unfortunately, not all major browsers <a href="http://caniuse.com/#feat=sharedworkers">support the API</a>. 
+			Therefore, any public-facing cross-tab communication framework should probably dynamically degrade from the 
+			better API to at least <em>Local Storage</em> since it enjoys much wider 
+			<a href="http://caniuse.com/#feat=namevalue-storage">support in browsers</a>.
+		</p>
+		<h2>Tests</h2>
+		<ul>
+			<li><a href="/performance/local-storage.html">Local Storage</a></li>
+			<li><a href="/performance/broadcast-channel.html">Broadcast Channel</a></li>
+			<li><a href="/performance/shared-worker.html">Shared Worker</a></li>
+		</ul>
+		<h3>Note</h3>
+		<p>
+			These tests has been written in ECMAScript 5.1 in order to be compatible with contemporary browsers.
+			Currently, only Firefox version 38 supports all three web APIs.
+		</p>
+		<hr>
+		<div id="footer">
+			Fredric Rylander, June 2015.
+		</div>
+	</body>
+</html>
